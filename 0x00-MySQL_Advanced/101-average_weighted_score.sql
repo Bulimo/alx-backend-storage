@@ -22,6 +22,6 @@ BEGIN
     END LOOP;
 
     CLOSE cur;
-END //
+END; //
 
 DELIMITER ;
