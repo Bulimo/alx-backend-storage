@@ -7,9 +7,7 @@ DETERMINISTIC
 BEGIN
     IF b = 0 THEN
         RETURN 0;
-    ELSE
-        RETURN (a * 1.0 / b);
     END IF;
+    RETURN (a * 1.0 / b);
 END //
-
 DELIMITER ;//
