@@ -9,5 +9,5 @@ BEGIN
         RETURN 0;
     END IF;
     RETURN (a * 1.0 / b);
-END //
+END; //
 DELIMITER ;//
