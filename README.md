@@ -6,6 +6,7 @@ Each folder in the repository covers particular concepts in back-end
 development specifically storage using MySQL
 
     . 0x00-MySQL_Advanced
+	. 0x01-NoSQL
 
 ## Authors
 
