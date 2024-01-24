@@ -1,4 +1,7 @@
 #!/usr/bin/env python3
+"""
+Module web that implements get_page function
+"""
 import requests
 import redis
 from functools import wraps
@@ -14,6 +17,7 @@ def count_access(method: Callable) -> Callable:
     """
     @wraps(method)
     def wrapper(url: str, *args, **kwargs):
+        """ Count replacement function """
         key = f"count:{url}"
         redis_instance.incr(key)
         return method(url, *args, **kwargs)
@@ -27,6 +31,7 @@ def cache_result(method: Callable) -> Callable:
     """
     @wraps(method)
     def wrapper(url: str, *args, **kwargs):
+        """ Cache function """
         key = f"cache:{url}"
         result = redis_instance.get(key)
 
