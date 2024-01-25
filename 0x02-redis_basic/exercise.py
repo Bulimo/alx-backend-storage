@@ -106,16 +106,17 @@ class Cache:
 
 def replay(method: Callable):
     """  function to display the history of calls of a particular function """
+    cache: Cache = Cache()
     key_inputs = method.__qualname__ + ":inputs"
     key_outputs = method.__qualname__ + ":outputs"
 
     inputs = [
         input_args.decode('utf-8')
-        for input_args in Cache()._redis.lrange(key_inputs, 0, -1)
+        for input_args in cache._redis.lrange(key_inputs, 0, -1)
     ]
     outputs = [
         output_result.decode(
-            'utf-8') for output_result in Cache()._redis.lrange(
+            'utf-8') for output_result in cache._redis.lrange(
                 key_outputs, 0, -1
         )
     ]
